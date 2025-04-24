@@ -7,6 +7,12 @@ public class CurrentThreadExample {
         System.out.println("현재 스레드: " + Thread.currentThread());
         System.out.println("현재 스레드 이름: " + Thread.currentThread().getName());
 
+
+        Thread myThread = new Thread(() -> {
+            System.out.println("현재 스레드: " + Thread.currentThread());
+            // 현재 스레드의 이름을 출력
+            System.out.println("현재 스레드 이름 (Thread 객체 사용): " + Thread.currentThread().getName());
+        });
         // Thread 객체를 사용하여 스레드 생성 및 시작
         Thread thread1 = new Thread() {
             @Override

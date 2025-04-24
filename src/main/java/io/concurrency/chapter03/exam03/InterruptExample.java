@@ -16,6 +16,7 @@ public class InterruptExample {
 
         thread2.start();
         Thread.sleep(1000);
+        // 즉, interrupt 는 wait, block 등의 상태에서 당했을때 에러가 남
         thread1.start();
 
         thread1.join();

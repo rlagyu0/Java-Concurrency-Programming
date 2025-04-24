@@ -1,6 +1,6 @@
 package io.concurrency.chapter03.exam03;
 
-public class InterruptedExample1 {
+public class   InterruptedExample1 {
     public static void main(String[] args) {
         Thread thread = new Thread(() -> {
             while (!Thread.interrupted()) {

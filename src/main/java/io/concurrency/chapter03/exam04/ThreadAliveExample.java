@@ -7,7 +7,7 @@ public class ThreadAliveExample {
             for (int i = 0; i < 5; i++) {
                 System.out.println("작업 스레드 1 실행 중...");
                 try {
-                    Thread.sleep(100); // 100ms 동안 일시 정지
+                    Thread.sleep(10000); // 100ms 동안 일시 정지
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -18,7 +18,7 @@ public class ThreadAliveExample {
             for (int i = 0; i < 5; i++) {
                 System.out.println("작업 스레드 2 실행 중...");
                 try {
-                    Thread.sleep(150); // 150ms 동안 일시 정지
+                    Thread.sleep(15000); // 150ms 동안 일시 정지
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
