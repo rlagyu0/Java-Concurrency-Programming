@@ -10,18 +10,21 @@ public class ThreadLocalExample {
         // 첫 번째 스레드: ThreadLocal 값을 설정하고 출력
         Thread thread1 = new Thread(() -> {
             System.out.println(Thread.currentThread().getName() + ": " + threadLocal.get());
-            threadLocal.set("스레드 1의 값");
+//            Thread.currentThread().getThreadLocals << 존재하지 않음 그냥 threadLocal 로 접근해야함.
+//            threadLocal.set("스레드 1의 값");
+//            threadLocal.get();
+
             System.out.println(Thread.currentThread().getName() + ": " + threadLocal.get());
         }, "Thread-1");
 
         // 두 번째 스레드: ThreadLocal 값을 설정하고 출력
-        Thread thread2 = new Thread(() -> {
-            System.out.println(Thread.currentThread().getName() + ": " + threadLocal.get());
-            threadLocal.set("스레드 2의 값");
-            System.out.println(Thread.currentThread().getName() + ": " + threadLocal.get());
-        }, "Thread-2");
-
+//        Thread thread2 = new Thread(() -> {
+//            System.out.println(Thread.currentThread().getName() + ": " + threadLocal.get());
+//            threadLocal.set("스레드 2의 값");
+//            System.out.println(Thread.currentThread().getName() + ": " + threadLocal.get());
+//        }, "Thread-2");
+//
         thread1.start();
-        thread2.start();
+//        thread2.start();
     }
 }

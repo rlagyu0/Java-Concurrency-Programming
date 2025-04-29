@@ -3,6 +3,9 @@ package io.concurrency.chapter04.exam05;
 public class InheritableThreadLocalExample {
     public static InheritableThreadLocal<String> inheritableThreadLocal = new InheritableThreadLocal<>();
 
+    // 공유되지 않는 경우의 테스트 코드
+//    public static ThreadLocal<String> inheritableThreadLocal = new ThreadLocal<>();
+
     public static void main(String[] args) {
 
         inheritableThreadLocal.set("부모 스레드의 값");
