@@ -1,5 +1,5 @@
 package io.concurrency.chapter06.exam01;
-public class Mutex {
+public class  Mutex {
     private boolean lock = false;
     public synchronized void acquired() {
         while (lock) {

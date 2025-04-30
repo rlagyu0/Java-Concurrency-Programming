@@ -21,7 +21,7 @@ public class SpinLockExample {
             System.out.println(Thread.currentThread().getName() + " 락을 획득했습니다!");
             try {
                 try {
-                    Thread.sleep(10);
+                    Thread.sleep(10000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

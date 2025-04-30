@@ -7,11 +7,13 @@ public class CountingSemaphoreExample {
         CountingSemaphore semaphore = new CountingSemaphore(permits);
         SharedResource resource = new SharedResource(semaphore);
 
-        int threadCount = 5; // 전체 스레드 개수
+        int threadCount = 15; // 전체 스레드 개수
 
         Thread[] threads = new Thread[threadCount];
         for (int i = 0; i < threadCount; i++) {
-            threads[i] = new Thread(resource::sum);
+            threads[i] = new Thread(() -> {
+                resource.sum();
+            });
             threads[i].start();
         }
 

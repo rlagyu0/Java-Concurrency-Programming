@@ -34,8 +34,11 @@ class SharedResource {
 
     public void sum() {
         commonSemaphore.acquired();
+        System.out.println("calculating... : Thread.currentThread().getName() = " + Thread.currentThread().getName());
         for(int i=0; i< 1000000; i++) {
-            value++;
+            synchronized (SharedResource.class) {
+                value++;
+            }
         }
         commonSemaphore.release();
     }
