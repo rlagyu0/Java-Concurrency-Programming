@@ -24,5 +24,6 @@ public class InterruptedExample3 {
         }
 
         thread.interrupt();
+        System.out.println("인터럽트 !!!");
     }
 }

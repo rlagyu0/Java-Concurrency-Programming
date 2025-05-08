@@ -9,7 +9,7 @@ public class LockAPIExample {
         Thread thread1 = new Thread(() -> {
             lock.lock();
             try {
-                Thread.sleep(1000); // 스레드 1이 Lock을 보유한 상태에서 대기
+                Thread.sleep(20000); // 스레드 1이 Lock을 보유한 상태에서 대기
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } finally {
@@ -37,12 +37,12 @@ public class LockAPIExample {
             e.printStackTrace();
         }
 
-        // Lock에 대한 정보 출력
+//         Lock에 대한 정보 출력
         System.out.println("Hold Count: " + lock.getHoldCount());
         System.out.println("Is Held By Current Thread: " + lock.isHeldByCurrentThread());
         System.out.println("Has Queued Threads: " + lock.hasQueuedThreads());
-        System.out.println("has Queued Thread1: " + lock.hasQueuedThread(thread1));
-        System.out.println("has Queued Thread2: " + lock.hasQueuedThread(thread2));
+        System.out.println("has Queued Thread1: " + lock.hasQueuedThread(thread1)); // 대기 큐에 스레드 1가 있는지?
+        System.out.println("has Queued Thread2: " + lock.hasQueuedThread(thread2)); // 대기 큐에 스레드 2가 있는지?
         System.out.println("Queue Length: " + lock.getQueueLength());
         System.out.println("isFair: " + lock.isFair());
 

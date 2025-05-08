@@ -44,7 +44,7 @@ public class ReentrantReadWriteLockAPIExample {
         return rwLock.isWriteLockedByCurrentThread();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         ReentrantReadWriteLockAPIExample example = new ReentrantReadWriteLockAPIExample();
 
 
@@ -77,6 +77,8 @@ public class ReentrantReadWriteLockAPIExample {
 
         thread1.start();
         thread2.start();
+        thread1.start();
+        thread2.join();
 
         try {
             Thread.sleep(500); // 메인 스레드 대기

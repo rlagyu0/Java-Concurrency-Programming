@@ -27,6 +27,7 @@ public class NonDeadlockObjectsExample {
                 synchronized (ResourceB.class) { // 두 번째로 ResourceB 락 획득
                     System.out.println(Thread.currentThread().getName() + ": methodA의 ResourceB 부분 실행");
                     resourceB.methodB2();
+                    // synchronized (ResourceB.class) 재진입성 , 호출 가능
                 }
             }
         }

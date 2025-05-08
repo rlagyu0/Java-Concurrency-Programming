@@ -21,6 +21,8 @@ public class LockInterruptiblyExample {
             }
         });
 
+        //
+
         Thread thread2 = new Thread(() -> {
             try {
                 lock.lockInterruptibly(); // 락을 시도하며, 인터럽트가 들어오면 중단
