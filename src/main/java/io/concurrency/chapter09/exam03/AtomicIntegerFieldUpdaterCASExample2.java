@@ -11,7 +11,7 @@ public class AtomicIntegerFieldUpdaterCASExample2 {
     public void doSomething() {
         if (messageUpdater.compareAndSet(this, "", "Hello World!")) {
             for (int i = 0; i < 10; i++) {
-                System.out.println(messageUpdater.get(this));
+                System.out.println(Thread.currentThread().getName() + " " + messageUpdater.get(this));
             }
             messageUpdater.set(this, "");
         } else {
